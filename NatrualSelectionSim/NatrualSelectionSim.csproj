@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7C4F4F02-C247-44CC-BE52-836ADB1D6911}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NatrualSelectionSim</RootNamespace>
+    <AssemblyName>NatrualSelectionSim</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AnimalManager\OzAnimalManager_Constructor.cs" />
+    <Compile Include="AnimalManager\OzAnimalManager.cs" />
+    <Compile Include="Animal\OzAnimal_Search.cs" />
+    <Compile Include="Animal\OzAnimal_Move.cs" />
+    <Compile Include="EventSyncroniser\OzEventSyncroniser_Constructors.cs" />
+    <Compile Include="EventSyncroniser\OzEventSyncroniser.cs" />
+    <Compile Include="GFX\GFXclass\OzGFX.cs" />
+    <Compile Include="GFX\GFXComponents\Appearence\OzGFXApearence.cs" />
+    <Compile Include="GFX\GFXComponents\Dimentions\ElipseDimentions\OzGFXCircleDimention.cs" />
+    <Compile Include="GFX\GFXComponents\Dimentions\ElipseDimentions\OzGFXEllipseDimention.cs" />
+    <Compile Include="GFX\GFXComponents\Dimentions\OzGFXDimentions.cs" />
+    <Compile Include="GFX\GFXComponents\OzGFXComponent.cs" />
+    <Compile Include="GFX\GFXComponents\Shapes\Ellipse\OzGFXCircle.cs" />
+    <Compile Include="GFX\GFXComponents\Shapes\Ellipse\OzGFXEllipse.cs" />
+    <Compile Include="Animal\OzAnimal.cs" />
+    <Compile Include="Animal\OzAnimal_Graphics.cs" />
+    <Compile Include="AnimalManager\OzAnimalManager_Rendering.cs" />
+    <Compile Include="PlantManager\OzPlantManager_Rendering.cs" />
+    <Compile Include="PlantManager\OzPlantManager.cs" />
+    <Compile Include="PlantManager\OzPlantManager_Constructors.cs" />
+    <Compile Include="Plant\OzPlant_Graphics.cs" />
+    <Compile Include="Plant\OzPlant.cs" />
+    <Compile Include="SimulationWindow.xaml.cs">
+      <DependentUpon>SimulationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Trait\MutationRate\OzMutationRate.cs" />
+    <Compile Include="Trait\OzTraitContainer\OzTraits.cs" />
+    <Compile Include="Trait\OzTrait\OzTrait.cs" />
+    <Compile Include="World\OzWorld_Tick.cs" />
+    <Compile Include="World\OzWorld_Rendering.cs" />
+    <Compile Include="World\OzWorld_Constructors.cs" />
+    <Compile Include="World\OzWorld.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SimulationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\LinearAlgebraDotNet\LinearAlgebraDotNet.csproj">
+      <Project>{01a46d13-5b39-421e-8ed5-0b981d822a5b}</Project>
+      <Name>LinearAlgebraDotNet</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
